@@ -14,10 +14,6 @@ class CarFactoryApplicationTests {
     CarFactory Volvo;
     CarFactory Saab;
 
-    @Test
-    void contextLoads() {
-    }
-
     @BeforeEach
     void setUp( ) {
         carFactory = new CarFactory("blue");
@@ -46,6 +42,11 @@ class CarFactoryApplicationTests {
         assertEquals("V12", Ford.getCar().carEngine());
         assertEquals("V8", Volvo.getCar().carEngine());
         assertEquals("V6", Saab.getCar().carEngine());
+    }
+
+    @Test
+    public void test_Licence_Plate() {
+        assertEquals(Ford.licencePlate, Ford.licencePlate);
     }
 
 }

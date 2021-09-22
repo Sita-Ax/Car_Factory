@@ -42,6 +42,7 @@ public class CarFactory {
 
     public CarFactory(String color) {
         this.color = color;
+        this.licencePlate = generateLicencePlate();
     }
 
     public String getColor() {
@@ -58,7 +59,6 @@ public class CarFactory {
             case VOLVO: {
                 car = new Volvo();
                 return car;
-
             }
             case FORD: {
                 car = new Ford();
@@ -70,6 +70,20 @@ public class CarFactory {
             }
         }
         throw new RuntimeException("No car could be made");
+    }
+
+    public String generateLicencePlate() {
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < 3; i++) {
+            char ch = (char) (Math.random() * 26 + 'A');
+            s.append(ch);
+        }
+        for (int i = 0; i < 3; i++) {
+            char digit1 = (char) (Math.random() * 10 + '0');
+            s.append(digit1);
+        }
+        String licenceplate = String.valueOf(s);
+        return licenceplate;
     }
 
 
