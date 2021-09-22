@@ -27,7 +27,6 @@ class CarFactoryApplicationTests {
         Volvo.createCar(CarType.VOLVO);
         Saab = new CarFactory("white");
         Saab.createCar(CarType.SAAB);
-
     }
 
     @Test
@@ -40,7 +39,13 @@ class CarFactoryApplicationTests {
         assertEquals("Saab", Saab.getCar().brand());
         assertEquals("Ford", Ford.getCar().brand());
         assertEquals("Volvo", Volvo.getCar().brand());
+    }
 
+    @Test
+    public void test_engines() {
+        assertEquals("V12", Ford.getCar().carEngine());
+        assertEquals("V8", Volvo.getCar().carEngine());
+        assertEquals("V6", Saab.getCar().carEngine());
     }
 
 }
