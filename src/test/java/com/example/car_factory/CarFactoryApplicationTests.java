@@ -38,14 +38,14 @@ class CarFactoryApplicationTests {
     }
 
     @Test
-    public void test_engines() {
+    void test_engines() {
         assertEquals("V12", Ford.getCar().carEngine());
         assertEquals("V8", Volvo.getCar().carEngine());
         assertEquals("V6", Saab.getCar().carEngine());
     }
 
     @Test
-    public void test_Licence_Plate() {
+    void test_Licence_Plate() {
         assertEquals(Ford.licencePlate, Ford.licencePlate);
     }
 
